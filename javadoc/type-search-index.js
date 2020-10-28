@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"config","l":"ConfigProperties"},{"p":"kafka","l":"Kafka"},{"p":"<Unnamed>","l":"TwitterMonitor"}]
