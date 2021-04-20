@@ -56,11 +56,13 @@ public class Kafka
 
         HttpResponse response = httpClient.execute(httpGet);
         HttpEntity entity = response.getEntity();
+        int i = 0;
         if (null != entity)
         {
             BufferedReader reader = new BufferedReader(new InputStreamReader((entity.getContent())));
             String line = reader.readLine();
-
+            System.out.println("Tweet " + i++ + ":");
+            System.out.println(line);
 
             //Configure the Producer
             Properties configProperties = new Properties();
