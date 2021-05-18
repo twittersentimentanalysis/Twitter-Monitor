@@ -25,9 +25,7 @@ public class TwitterMonitor
 
         if (null != bearerToken)
         {
-            Map<String, String> rules = new HashMap<>();
-            rules.put(properties.getProperty("covid-19_rule.value"), properties.getProperty("covid-19_rule.tag"));
-            Kafka.setupRules(bearerToken, rules);
+            Kafka.setupRules(bearerToken);
             Kafka.connectStream(bearerToken);
         } else
         {

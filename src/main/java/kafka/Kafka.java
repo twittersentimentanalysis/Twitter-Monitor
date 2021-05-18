@@ -26,10 +26,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URISyntaxException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
+import java.util.*;
 
 /** Class to connect to Apache Kafka server.
  *
@@ -98,18 +95,19 @@ public class Kafka
 
     /** Helper method to setup rules before streaming data.
      *
-     * @param bearerToken Authorization token to connect to Twitter API.
-     * @param rules Rules for streaming data.
+     * @param bearerToken Authorization token to connect to Twitter API.s
      * @throws URISyntaxException {@link URISyntaxException during the http request.}
      * @throws IOException {@link IOException trying to get the content from the request.}
      */
-    public static void setupRules(String bearerToken, Map<String, String> rules) throws IOException, URISyntaxException
+    public static void setupRules(String bearerToken) throws IOException, URISyntaxException
     {
         List<String> existingRules = getRules(bearerToken);
         if (existingRules.size() > 0)
         {
             deleteRules(bearerToken, existingRules);
         }
+        Map<String, String> rules = new HashMap<>();
+        rules.put(properties.getProperty("covid-19_rule.value"), properties.getProperty("covid-19_rule.tag"));
         createRules(bearerToken, rules);
     }
 
