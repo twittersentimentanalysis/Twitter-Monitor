@@ -1,6 +1,8 @@
 # Twitter Monitor
 Twitter Monitor to get filtered tweets and send it to Kafka server.
 
+## Documentation
+https://twittersentimentanalysis.github.io/Twitter-Monitor/javadoc/index.html
 
 ## How to run
 ### Local
